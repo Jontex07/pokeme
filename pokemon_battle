@@ -1,5 +1,33 @@
 from pokemon_class import *
 import random
+# def Pokemon_battle(p1,p2):
+#     if p1.Speed > p2.Speed:
+#         print(p1.Name+" Attacks!")
+#         p2.Total = p2.Total - p1.Atk
+#         if p2.Total > 0:
+#             print(p2.Name + " Attacks!")
+#             p1.Total = p1.Total - p2.Atk
+#             if p1.Total <= 0:
+#               p1.Total = 0
+#               print(p1.Name + " Fainted!! " + p2.Name + " is the winner!")
+#         elif  p2.Total <= 0:
+#             p2.Total = 0
+#             print(p2.Name + " Fainted!! " + p1.Name + " is the winner!")
+#         print(p1.Name+" HP:"+str(p1.Total)+"\n"+p2.Name+" HP: "+str(p2.Total))
+#     elif p2.Speed > p1.Speed:
+#         print(p2.Name + " Attacks!")
+#         p1.Total = p1.Total - p2.Atk
+#         if p1.Total > 0:
+#             print(p1.Name + " Attacks!")
+#             p2.Total = p2.Total - p1.Atk
+#             if p2.Total <= 0:
+#               p2.Total = 0
+#               print(p2.Name + " Fainted!! " + p1.Name + " is the winner!")
+#         elif p1.Total <= 0:
+#             p1.Total = 0
+#             print(p1.Name + " Fainted!! " + p2.Name + " is the winner!")
+#         print(p1.Name+" HP:"+str(p1.Total)+"\n"+str(p2.Name)+" HP: "+str(p2.Total))
+#     return p1,p2
 def Pokemon_battle(p1:Pokemon,p2:Pokemon):
     p1_attack_pool = []
     p2_attack_pool = []
@@ -58,6 +86,7 @@ def Pokemon_battle(p1:Pokemon,p2:Pokemon):
 
 
 
+
 if __name__ == '__main__':
     pokemon_list1 = All_Pokemons("pokemon_list.csv")
     #the computer selects his pokemon
@@ -69,6 +98,18 @@ if __name__ == '__main__':
     pokemon_1 = battle[0]
     pokemon_2 = battle[1]
     x = Pokemon_battle(pokemon_1,pokemon_2)
+    # while x[0].Total > 0 and x[1].Total > 0:
+    #     y = Pokemon_battle(x[0],x[1])
+
+
+
+
+
+
+
+
+
+
 
 
 
