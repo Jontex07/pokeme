@@ -295,144 +295,171 @@ class All_Pokemons():
                 return pokemon
 
 
-    def super_effective(self, p1, p2: Pokemon):
+    def super_effective(self, p1:Pokemon, p2: Pokemon):
         if p1.Type_1 == "Fire" or p1.Type_2 == "Fire":
             if p2.Type_1 == "Water" or p2.Type_1 == "Ground" or p2.Type_1 == "Rock" or p2.Type_2 == "Water" or p2.Type_2 == "Ground" or p2.Type_2 == "Rock":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Grass" or "Ice" or "BUG" or p2.Type_2 == "Grass" or p2.Type_2 == "Ice" or p2.Type_2 == "BUG":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
         else:
             pass
+
         if p1.Type_1 == "Water" or p1.Type_2 == "Water":
             if p2.Type_1 == "Grass" or p2.Type_1 == "Electric" or p2.Type_2 == "Grass" or p2.Type_2 == "Electric":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Fire" or p2.Type_1 == "Ground" or p2.Type_2 == "Fire" or p2.Type_2 == "Ground":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
 
             else:
                 pass
+
         if p1.Type_1 == "Grass" or p1.Type_2 == "Grass":
             if p2.Type_1 == "Fire" or p2.Type_2 == "Ice" or p2.Type_1 == "Poison" or p2.Type_1 == "Flying" or p2.Type_1 == "Bug" \
                     or p2.Type_2 == "Fire" or p2.Type_2 == "Ice" or p2.Type_2 == "Poison" or p2.Type_2 == "Bug":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Water" or p2.Type_1 == "Ground" or p2.Type_1 == "Rock" or p2.Type_2 == "Water" or \
                     p2.Type_2 == "Ground" or p2.Type_2 == "Rock":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
         else:
             pass
+
         if p1.Type_1 == "Normal" or p1.Type_2 == "Normal":
             if p2.Type_1 == "Fighting" or p2.Type_2 == "Fighting":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Fire" or p2.Type_1 == "Ground" or p2.Type_2 == "Fire" or p2.Type_2 == "Ground":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Ice" or p1.Type_2 == "Ice":
             if p2.Type_1 == "Fighting" or p2.Type_1 == "Fire" or p2.Type_1 == "Rock" or p2.Type_2 == "Fighting" \
                     or p2.Type_2 == "Fire" or p2.Type_2 == "Rock":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Grass" or p2.Type_1 == "Ground" or p2.Type_2 == "Flying" or p2.Type_1 == "Dragon" or \
                     p2.Type_2 == "Grass" or p2.Type_2 == "Ground" or p2.Type_2 == "Flying" or p2.Type_2 == "Dragon":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
         if p1.Type_1 == "Electric" or p1.Type_2 == "Electric":
             if p2.Type_1 == "Ground" or p2.Type_2 == "Ground":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val*= 1.25
+
             elif p2.Type_1 == "Water" or p2.Type_1 == "Flying" or p2.Type_2 == "Water" or p2.Type_2 == "Flying":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Poison" or p1.Type_2 == "Poison":
             if p2.Type_1 == "Ground" or p2.Type_1 == "Psychic" or p2.Type_2 == "Ground" or p2.Type_2 == "Psychic":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Grass" or p2.Type_2 == "Grass":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Ground" or p1.Type_2 == "Ground":
             if p2.Type_1 == "Water" or p2.Type_1 == "Grass" or p2.Type_1 == "Ice" or p2.Type_2 == "Water" or p2.Type_2 == "Grass" \
                     or p2.Type_2 == "Ice":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
             elif p2.Type_1 == "Fire" or p2.Type_1 == "Electric" or p2.Type_1 == "Poison" or p2.Type_2 == "Rock" or \
                     p2.Type_2 == "Fire" or p2.Type_2 == "Electric" or p2.Type_2 == "Poison" or p2.Type_2 == "Rock":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Flying" or p1.Type_2 == "Flying":
             if p2.Type_1 == "Electric" or p2.Type_1 == "Ice" or p2.Type_1 == "Rock" or \
                     p2.Type_2 == "Electric" or p2.Type_2 == "Ice" or p2.Type_2 == "Rock":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Grass" or p2.Type_1 == "Fighting" or p2.Type_1 == "Bug" or p2.Type_2 == "Grass" or \
                     p2.Type_2 == "Fighting" or p2.Type_2 == "Bug":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Psychic" or p1.Type_2 == "Psychic":
             if p2.Type_1 == "Bug" or p2.Type_1 == "Ghost" or p2.Type_2 == "Bug" or p2.Type_2 == "Ghost":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Fighting" or p2.Type_1 == "Poison" or p2.Type_2 == "Fighting" or p2.Type_2 == "Poison":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Bug" or p1.Type_2 == "Bug":
             if p2.Type_1 == "Fire" or p2.Type_1 == "Flying" or p2.Type_1 == "Rock" or p2.Type_2 \
                     == "Fire" or p2.Type_2 == "Flying" or p2.Type_2 == "Rock":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
             elif p2.Type_1 == "Grass" or p2.Type_1 == "Psychic" or p2.Type_2 == "Grass" or p2.Type_2 == "`Psychic":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Rock" or p1.Type_2 == "Rock":
             if p2.Type_1 == "Water" or p2.Type_1 == "Grass" or p2.Type_1 == "Fighting" or p2.Type_1 \
                     == "Ground" or p2.Type_2 == "Water" or p2.Type_2 == "Grass" or p2.Type_2 == "Fighting`" or p2.Type_2 \
                     == "Ground":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Fire" or p2.Type_1 == "Ice" or p2.Type_1 == "Flying" \
                     or p2.Type_1 == " Bug" or p2.Type_2 == "Fire" or p2.Type_2 == "Ice" or p2.Type_2 == "`Flying" \
                     or p2.Type_2 == "Bug":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Ghost" or p1.Type_2 == "Ghost":
             if p2.Type_1 == "Ghost" or p2.Type_2 == "Ghost":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Ghost" or p2.Type_1 == "Psychic" or p2.Type_2 == "Ghost" or p2.Type_2 == "`Psychic":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
+
         if p1.Type_1 == "Dragon" or p1.Type_2 == "Dragon":
             if p2.Type_1 == "Dragon" or p2.Type_1 == "Ice" or p2.Type_2 \
                     == "Dragon" or p2.Type_2 == "Ice":
-                p2.Atk *= 1.25
+                for val in p2.attacks.values():
+                    val *= 1.25
+
             elif p2.Type_1 == "Dragon" or p2.Type_2 == "Dragon":
-                p1.Atk *= 1.25
+                for val in p1.attacks.values():
+                    val *= 1.25
             else:
                 pass
 
         return p1, p2
-
-
-
-
-
-
-
-# if __name__ == '__main__':
-#     pokemon_list1 = All_Pokemons("pokemon_list.csv")
-#     pokemon_list1.print_me()
-#     player_1 = random.choice(pokemon_list1.pokemon_list)
-#     step_1 = pokemon_list1.check_name(player_1)
-#     pokemon_list1.print_me()
-#     player_2 = input("Ok now it's your turn to choose a pokemon :")
-#     step_2 = pokemon_list1.check_name(player_2)
-#     battle = pokemon_list1.super_effective(step_1, step_2)
-#     print(pokemon_list1.pokemon_battle(battle[0], battle[1]))
-
-
-all_pokemons = All_Pokemons("pokemon_list.csv")
-pokemon1 = all_pokemons.select_a_pokemon(6)
-x = pokemon1.print_attacks()
-print(pokemon1)
-print(x)
-
