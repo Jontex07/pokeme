@@ -71,7 +71,7 @@ def Pokemon_battle(p1:Pokemon,p2:Pokemon,my_name):
             print(p1.Name + " HP:" + str(p1.Total))
             print(p2.Name + " HP:" + str(p2.Total))
             print("")
-            print("Its your turn: ")
+            print("Its your turn ")
             atc1 = input("\nAttacks: \n"+p2.print_attacks() + "\n select your move:")
             p1.Total-=p2.attacks[p2_attack_pool[int(atc1)-1]]
             print(p2.Name + " used " + p2_attack_pool[int(atc1) - 1])
@@ -133,6 +133,10 @@ if __name__ == '__main__':
     pokemon_1 = battle[0]
     pokemon_2 = battle[1]
     x = Pokemon_battle(pokemon_1,pokemon_2,my_name)
+
+
+
+
 
 
 
