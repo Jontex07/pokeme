@@ -1,0 +1,126 @@
+import csv
+import random
+
+
+
+class Attack:
+    def __init__(self,atk):
+        self.Name = atk[1]
+        self.Type = atk[2]
+        self.Power = atk[5]
+
+    def __str__(self):
+        back = "Name: "+str(self.Name)+" \nType: "+str(self.Type)+"\nPower: "+str(self.Power)
+        return back
+
+    def __repr__(self):
+        return str(self)
+
+
+
+class Attack_Type():
+    def __init__(self):
+        self.types = {"Bug":[], "Dragon":[], "Electric":[], "Fighting":[], "Fire":[], "Flying":[], "Ghost":[], "Grass":[], "Ground":[],
+                      "Ice":[], "Normal":[], "Poison":[], "Psychic":[], "Rock":[], "Water":[]}
+
+
+        attack_pool = ["Water", "Rock", "Psychic", "Poison", "Normal", "Ice", "Ground", "Grass", "Ghost", "Flying",
+                       "Fire", "Fighting", "Electric", "Dragon", "Bug"]
+        with open("Attack List.csv") as csvfile:
+
+            read = csv.reader(csvfile)
+            next(read)
+            for row in read:
+                if row[2] not in attack_pool:
+                    pass
+                elif row[5] == "—":
+                    pass
+                else:
+                    attack = Attack(row)
+                    self.Add_Attack(attack)
+
+
+
+
+    def Add_Attack(self,atk):
+        for key in self.types.keys():
+            if atk.Type == key:
+                self.types[key].append(atk)
+
+    def print_me(self):
+        print(self.types)
+
+    def print_power(self):
+        for atc in self.types.values():
+            if int(atc.Power) >= 60:
+                print(atc)
+
+    def __atc_list__(self,type,low_power_cap,high_power_cap):
+        som_list = []
+        for atc in self.types[type]:
+            if int(atc.Power) > low_power_cap and int(atc.Power) <= high_power_cap:
+                som_list.append(atc)
+        return som_list
+
+
+
+    def pokemon_atc(self,Type1,Total1,Type2 =""):# will add the relavent attacks to a pokemon. still not working
+        final_attack_dict = {}
+        type1 = Type1
+        type2 = Type2
+        normal_attacts = self.__atc_list__("Normal",0,90)
+        normal_atc = random.choice(normal_attacts)
+        final_attack_dict[str(normal_atc.Name)+" "+str(normal_atc.Type)] = int(normal_atc.Power)
+        if int(Total1) <= 350:
+            count = 0
+            type_attacks = self.__atc_list__(type1,0,70)
+            while count < 2:
+                type_atc = random.choice(type_attacks)
+                final_attack_dict[type_atc.Name+" "+type_atc.Type] = int(type_atc.Power)
+                count += 1
+        if int(Total1) > 350 and int(Total1) <= 500:
+
+            count = 0
+            type1_attacks = self.__atc_list__(type1,40,95)
+            while count < 2 :
+                type1_atc = random.choice(type1_attacks)
+                final_attack_dict[type1_atc.Name+" "+type1_atc.Type] = int(type1_atc.Power)
+                count += 1
+            if len(type2) > 0:
+                type2_attacks = self.__atc_list__(type2,40,95)
+                type2_atc = random.choice(type2_attacks)
+                final_attack_dict[type2_atc.Name + " " + type2_atc.Type] = int(type2_atc.Power)
+            else:
+                type1_atc = random.choice(type1_attacks)
+                final_attack_dict[type1_atc.Name + " " + type1_atc.Type] = int(type1_atc.Power)
+        if int(Total1) > 500:
+            count = 0
+            type1_attacks = self.__atc_list__(type1,70,200)
+            while count < 2:
+                type1_atc = random.choice(type1_attacks)
+                final_attack_dict[type1_atc.Name+" "+type1_atc.Type] = int(type1_atc.Power)
+                count += 1
+            if len(type2) > 0:
+                type2_attacks = self.__atc_list__(type2,70,200)
+                type2_atc = random.choice(type2_attacks)
+                final_attack_dict[type2_atc.Name + " " + type2_atc.Type] = int(type2_atc.Power)
+            else:
+                type1_atc = random.choice(type1_attacks)
+                final_attack_dict[type1_atc.Name + " " + type1_atc.Type] = int(type1_atc.Power)
+        return final_attack_dict
+
+
+
+
+
+
+    def __repr__(self):
+        return str(self)
+
+
+
+
+#
+# a = Attack_Type()
+# a.print_me()
+
